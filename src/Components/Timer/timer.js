@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Card, Container } from "../";
-import { countdown as util_countdown } from "../../Utils";
+import { countdown as util_countdown } from "../../utils";
 
 class Timer extends Component {
   constructor(props) {
