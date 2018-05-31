@@ -1,26 +1,27 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { Card, Container } from "./Components";
-import { countdown } from "./utils";
+import { Timer } from "./Components";
+import { months } from './Constants';
 
 class App extends Component {
   render() {
+    const year = 2018;
+    const month = months.JULY;
+    const date = 1;
+    // 24 hour format
+    const hours = 8;
+    const minutes = 0;
+    const countdownDate = new Date(year, month, date, hours, minutes)
+      .toLocaleString("en-US", {timeZone: "America/Mexico_city"});
+    console.log(countdownDate);
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Countdown timer</h1>
+          <h1 className="App-title">🇲🇽 Elections React Countdown timer 🇲🇽</h1>
         </header>
-        <p className="App-intro" />
-        {/* <Container>
-          [ */}
-          <Card title="1" body="Days" />
-          <Card title="1" body="Hours" />
-          <Card title="1" body="Minutes" />
-          <Card title="1" body="Seconds" />
-          {/* ] */}
-        {/* </Container> */}
+        <Timer date={countdownDate} />
       </div>
     );
   }
